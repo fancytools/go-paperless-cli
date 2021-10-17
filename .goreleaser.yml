@@ -1,0 +1,36 @@
+before:
+  hooks:
+    - go mod tidy
+    - go generate ./...
+builds:
+  - env:
+      - CGO_ENABLED=0
+    flags:
+      - -trimpath
+      - -tags=netgo
+    ldflags:
+      - -s -w -extldflags "-static" -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.date={{.Date}} -X main.builtBy=goreleaser
+    goos:
+      - linux
+    goarch:
+      - amd64
+      - arm
+      - arm64
+    binary: go-paperless.cli
+    hooks:
+      post: upx {{ .Path }}
+archives:
+  - replacements:
+      linux: Linux
+      386: i386
+      amd64: x86_64
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
