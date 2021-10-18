@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/fancytools/go-paperless-cli/pkg/file_upload"
+	"github.com/fancytools/go-paperless-cli/pkg/fileUpload"
 	"github.com/spf13/cobra"
 )
 
@@ -30,7 +30,7 @@ var uploadCmd = &cobra.Command{
 		}
 
 		for file := range files {
-			file_upload.UploadFile(endpoint, file, token, false)
+			fileUpload.UploadFile(endpoint, file, token, false)
 		}
 	},
 }

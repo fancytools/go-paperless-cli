@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/fancytools/go-paperless-cli/pkg/file_upload"
+	"github.com/fancytools/go-paperless-cli/pkg/fileUpload"
 	"github.com/spf13/cobra"
 )
 
@@ -15,7 +15,7 @@ var watchCmd = &cobra.Command{
 	Args:  cobra.NoArgs,
 
 	Run: func(cmd *cobra.Command, args []string) {
-		file_upload.StartWatching(watchedDir, endpoint, token, deleteFile)
+		fileUpload.StartWatching(watchedDir, endpoint, token, deleteFile)
 	},
 }
 
