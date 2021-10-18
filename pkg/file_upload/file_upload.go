@@ -2,7 +2,6 @@ package file_upload
 
 import (
 	"bytes"
-	"github.com/fsnotify/fsnotify"
 	"io"
 	"log"
 	"mime/multipart"
@@ -12,6 +11,8 @@ import (
 	"sync"
 	"syscall"
 	"time"
+
+	"github.com/fsnotify/fsnotify"
 )
 
 func StartWatching(watchedDir string, endpoint string, token string, deleteFile bool) {

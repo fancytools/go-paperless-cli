@@ -1,11 +1,12 @@
 package cmd
 
 import (
-	"github.com/fancytools/go-paperless-cli/pkg/file_upload"
-	"github.com/spf13/cobra"
 	"io/fs"
 	"log"
 	"os"
+
+	"github.com/fancytools/go-paperless-cli/pkg/file_upload"
+	"github.com/spf13/cobra"
 )
 
 var filePath string
