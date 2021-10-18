@@ -1,5 +1,5 @@
 ---
-name: super-linter
+name: golangci-lint
 
 on:
   push:
@@ -8,8 +8,8 @@ on:
     branches: [main]
 
 jobs:
-  build:
-    name: super-linting
+  golangci:
+    name: lint
     runs-on: ubuntu-latest
 
     steps:
@@ -19,9 +19,7 @@ jobs:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
 
-      - name: super-linter
-        uses: github/super-linter@v4
-        env:
-          VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v2
+        with:
+          version: latest
