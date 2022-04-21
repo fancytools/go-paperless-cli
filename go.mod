@@ -3,7 +3,7 @@ module github.com/fancytools/go-paperless-cli
 go 1.17
 
 require (
-	github.com/fsnotify/fsnotify v1.5.1
+	github.com/fsnotify/fsnotify v1.5.3
 	github.com/spf13/cobra v1.4.0
 )
 
