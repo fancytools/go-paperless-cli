@@ -1,6 +1,6 @@
 module github.com/fancytools/go-paperless-cli
 
-go 1.17
+go 1.19
 
 require (
 	github.com/fsnotify/fsnotify v1.5.4
