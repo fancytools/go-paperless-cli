@@ -2,7 +2,7 @@
 
 > It's currently under development
 
-go-paperless-cli is a commandline tool for interacting with [paperless-ng](https://github.com/jonaswinkler/paperless-ng)
+go-paperless-cli is a commandline tool for interacting with [paperless-ngx](https://github.com/paperless-ngx/paperless-ngx)
 
 ## Installation
 TBD
