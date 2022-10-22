@@ -49,7 +49,7 @@ func StartWatching(watchedDir string, endpoint string, token string, deleteFile 
 					if !ok {
 						return
 					}
-					if event.Op != fsnotify.Write {
+					if !event.Has(fsnotify.Write) {
 						return
 					}
 					wg.Add(1)
